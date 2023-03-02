@@ -10,7 +10,7 @@ const sortTasks = () => {
 
 const updadeIds = () => {
   tasksArray.forEach((task) => {
-    task.id = tasksArray.indexOf(task);
+    task.index = tasksArray.indexOf(task);
   });
 };
 

@@ -17,7 +17,9 @@ todoList.addEventListener('click', (e) => {
   } else if (e.target.classList.contains('delete-task__button')) {
     const taskIndex = e.target.closest('.task-li').id.split('-')[1];
     appFunction.tasksArray.forEach((task) => {
-      if (task.index === taskIndex) appFunction.removeTask(task);
+      if (task.index === +taskIndex) {
+        appFunction.removeTask(task);
+      }
     });
   }
 });
