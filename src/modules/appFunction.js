@@ -55,6 +55,13 @@ const toggleIcon = (btn) => {
   });
 };
 
+const unfocusTask = (taskLi) => {
+  const taskBtn = taskLi.querySelector('.task-btn');
+  toggleIcon(taskBtn);
+  taskBtn.style.cursor = 'move';
+  taskLi.style.backgroundColor = 'white';
+};
+
 export const focusTask = (btn = null) => {
   toggleIcon(btn);
   document.querySelectorAll('.task-li').forEach((taskLi) => {
@@ -83,4 +90,14 @@ export const removeTask = (task) => {
   sortTasks();
   saveToLocalStorage();
   displayTasks();
+};
+
+export const EditTask = (taskInput) => {
+  const taskLi = taskInput.closest('.task-li');
+  const task = tasksArray.find(
+    (task) => task.index === +taskLi.id.split('-')[1],
+  );
+  task.description = taskInput.value;
+  taskInput.blur();
+  unfocusTask(taskLi);
 };

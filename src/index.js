@@ -30,6 +30,9 @@ document.addEventListener('keydown', (e) => {
     if (focusedInput === addNewTodoInput && addNewTodoInput.value !== '') {
       appFunction.addTask(addNewTodoInput);
       addNewTodoInput.value = '';
+    } else if (document.activeElement.classList.contains('task-input')) {
+      const taskInput = document.activeElement;
+      appFunction.EditTask(taskInput);
     }
   }
 });
