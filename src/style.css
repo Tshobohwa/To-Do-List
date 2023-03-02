@@ -14,6 +14,10 @@ body {
   border: none;
 }
 
+input {
+  background-color: transparent;
+}
+
 input:focus {
   outline: none;
 }
@@ -61,10 +65,6 @@ li,
   width: 2.5rem;
   border-radius: 50%;
   cursor: move;
-}
-
-.task-btn:hover {
-  background-color: #e5e5e5;
 }
 
 .task-btn__icon {
