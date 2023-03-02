@@ -1,0 +1,1 @@
+permalink: /dist/index.html
