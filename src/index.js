@@ -5,11 +5,20 @@ const todoList = document.querySelector('.todo-list');
 const addNewTodoInput = document.querySelector('.new-todo-input');
 appFunction.displayTasks(todoList);
 todoList.addEventListener('click', (e) => {
-  if (e.target.closest('.task-btn')) {
+  if (
+    e.target.closest('.task-btn')
+    && !e.target.classList.contains('delete-task__button')
+  ) {
     const taskBtn = e.target.closest('.task-btn');
     appFunction.focusTask(taskBtn);
   } else if (e.target.classList.contains('task-input')) {
-    e.preventDefault();
+    const taskBtn = e.target.closest('.task-li').querySelector('.task-btn');
+    appFunction.focusTask(taskBtn);
+  } else if (e.target.classList.contains('delete-task__button')) {
+    const taskIndex = e.target.closest('.task-li').id.split('-')[1];
+    appFunction.tasksArray.forEach((task) => {
+      if (task.index === taskIndex) appFunction.removeTask(task);
+    });
   }
 });
 

@@ -21,14 +21,14 @@ export const displayTasks = () => {
     todoList.insertAdjacentHTML(
       'beforeend',
       `
-      <li class="task-li" id ="task-${task.id}">
+      <li class="task-li" id ="task-${task.index}">
           <input type="checkbox" class="task-checker" ${
   task.completed && 'checked'
 }>
           <input type="text" class="task-input" value="${task.description}">
           <button class="task-btn">
             <i class="fa-solid fa-ellipsis-vertical task-btn__icon"></i>
-            <i class="fa-solid fa-trash-can task-btn__icon icon-hidden"></i>
+            <i class="fa-solid fa-trash-can task-btn__icon icon-hidden delete-task__button"></i>
           </button>
       </li>`,
     );
@@ -55,7 +55,7 @@ const toggleIcon = (btn) => {
   });
 };
 
-export const focusTask = (btn) => {
+export const focusTask = (btn = null) => {
   toggleIcon(btn);
   document.querySelectorAll('.task-li').forEach((taskLi) => {
     if (taskLi === btn.closest('.task-li')) {
