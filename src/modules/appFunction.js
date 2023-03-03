@@ -59,19 +59,6 @@ const toggleIcon = (btn) => {
   });
 };
 
-export const removeAllCompleted = () => {
-  tasksArray.forEach((task) => {
-    if (task.completed) {
-      const taskIndex = tasksArray.indexOf(task);
-      tasksArray.splice(taskIndex, 1);
-    }
-  });
-  updadeIds();
-  sortTasks();
-  saveToLocalStorage();
-  displayTasks();
-};
-
 const unfocusTask = (taskLi) => {
   const taskBtn = taskLi.querySelector('.task-btn');
   toggleIcon(taskBtn);
@@ -118,4 +105,13 @@ export const EditTask = (taskInput) => {
   saveToLocalStorage();
   taskInput.blur();
   unfocusTask(taskLi);
+};
+
+export const removeAllCompleted = () => {
+  const completedTaks = tasksArray.filter((task) => task.completed);
+  completedTaks.forEach((task) => removeTask(task));
+  updadeIds();
+  sortTasks();
+  saveToLocalStorage();
+  displayTasks();
 };
