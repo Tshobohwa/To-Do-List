@@ -1,8 +1,10 @@
 import './style.css';
 import * as appFunction from './modules/appFunction.js';
+import { checkTask } from './modules/checkbox';
 
 const todoList = document.querySelector('.todo-list');
 const addNewTodoInput = document.querySelector('.new-todo-input');
+const clearCompletedBtn = document.querySelector('.clear-completed__btn');
 appFunction.displayTasks(todoList);
 todoList.addEventListener('click', (e) => {
   if (
@@ -24,6 +26,11 @@ todoList.addEventListener('click', (e) => {
   }
 });
 
+todoList.addEventListener('change', (e) => {
+  if (e.target.type === 'checkbox') checkTask(e.target, appFunction.tasksArray);
+  appFunction.saveToLocalStorage();
+});
+
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     const focusedInput = document.activeElement;
@@ -36,3 +43,5 @@ document.addEventListener('keydown', (e) => {
     }
   }
 });
+
+clearCompletedBtn.addEventListener('click', appFunction.removeAllCompleted);
