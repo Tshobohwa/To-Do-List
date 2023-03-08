@@ -1,6 +1,8 @@
+import { displayCheck } from './checkbox';
+
 export const tasksArray = JSON.parse(localStorage.getItem('tasksArray')) || [];
 
-const saveToLocalStorage = () => {
+export const saveToLocalStorage = () => {
   localStorage.setItem('tasksArray', JSON.stringify(tasksArray));
 };
 
@@ -32,6 +34,8 @@ export const displayTasks = () => {
           </button>
       </li>`,
     );
+    const taskLi = document.querySelector(`#task-${task.index}`);
+    displayCheck(taskLi, task);
   });
 };
 
@@ -66,7 +70,7 @@ export const focusTask = (btn = null) => {
   toggleIcon(btn);
   document.querySelectorAll('.task-li').forEach((taskLi) => {
     if (taskLi === btn.closest('.task-li')) {
-      taskLi.style.backgroundColor = 'yellow';
+      taskLi.style.backgroundColor = '#d3d3d3';
     } else taskLi.style.backgroundColor = 'white';
   });
 };
@@ -98,6 +102,16 @@ export const EditTask = (taskInput) => {
     (task) => task.index === +taskLi.id.split('-')[1],
   );
   task.description = taskInput.value;
+  saveToLocalStorage();
   taskInput.blur();
   unfocusTask(taskLi);
+};
+
+export const removeAllCompleted = () => {
+  const completedTaks = tasksArray.filter((task) => task.completed);
+  completedTaks.forEach((task) => removeTask(task));
+  updadeIds();
+  sortTasks();
+  saveToLocalStorage();
+  displayTasks();
 };
