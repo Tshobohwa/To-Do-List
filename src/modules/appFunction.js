@@ -1,4 +1,4 @@
-import { displayCheck } from './checkbox';
+import { displayCheck } from './checkbox.js';
 
 export const tasksArray = JSON.parse(localStorage.getItem('tasksArray')) || [];
 
