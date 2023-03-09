@@ -82,7 +82,7 @@ describe('EditTask', () => {
   });
 });
 
-describe('remove all complete',() => {
+describe('remove all complete', () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <ul class="todo-list">
@@ -107,17 +107,16 @@ describe('remove all complete',() => {
     localStorage.clear();
     tasksArray.length = 0;
     tasksArray.push(
-      {description: 'Task 1', completed: true, index: 0,},
-      {description: 'Task 2', completed: false, index: 1,},
+      { description: 'Task 1', completed: true, index: 0 },
+      { description: 'Task 2', completed: false, index: 1 }
     );
     displayTasks();
   });
-  
-  
+
   test('should remove all completed tasks', () => {
-      removeAllCompleted();
-      expect(tasksArray.length).toBe(1);
-      expect(tasksArray[0].description).toBe('Task 2');
-      expect(document.querySelectorAll('.task-li').length).toBe(1);
-  })
-})
+    removeAllCompleted();
+    expect(tasksArray.length).toBe(1);
+    expect(tasksArray[0].description).toBe('Task 2');
+    expect(document.querySelectorAll('.task-li').length).toBe(1);
+  });
+});
