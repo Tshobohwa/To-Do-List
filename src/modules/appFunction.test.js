@@ -108,7 +108,7 @@ describe('remove all complete', () => {
     tasksArray.length = 0;
     tasksArray.push(
       { description: 'Task 1', completed: true, index: 0 },
-      { description: 'Task 2', completed: false, index: 1 }
+      { description: 'Task 2', completed: false, index: 1 },
     );
     displayTasks();
   });

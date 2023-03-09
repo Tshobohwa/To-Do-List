@@ -12,7 +12,7 @@ describe('checkTask', () => {
   it('should mark a task as completed when the checkbox is checked', () => {
     const task = {
       index: 123,
-      completed: false
+      completed: false,
     };
     const tasksArray = [task];
     const taskLi = document.createElement('li');
@@ -28,4 +28,3 @@ describe('checkTask', () => {
     expect(task.completed).toBe(true);
   });
 });
-  
