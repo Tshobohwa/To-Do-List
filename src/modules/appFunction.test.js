@@ -1,7 +1,9 @@
 import { JSDOM } from 'jsdom';
 import 'jest-localstorage-mock';
 
-const dom = new JSDOM('<!DOCTYPE html><html><body><ul class="todo-list"></ul></body></html>');
+const dom = new JSDOM(
+  '<!DOCTYPE html><html><body><ul class="todo-list"></ul></body></html>',
+);
 global.document = dom.window.document;
 global.window = dom.window;
 
