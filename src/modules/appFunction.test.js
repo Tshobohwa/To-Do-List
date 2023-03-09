@@ -41,7 +41,6 @@ describe('removeTask', () => {
   });
 
   test('removes a task from the list', () => {
-    const taskLi = document.querySelector('.task-li');
     removeTask(tasksArray[0]);
     expect(tasksArray).toHaveLength(0);
     expect(document.querySelectorAll('.task-li')).toHaveLength(0);
