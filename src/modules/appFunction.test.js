@@ -1,7 +1,9 @@
 import { JSDOM } from 'jsdom';
 import 'jest-localstorage-mock';
 
-const dom = new JSDOM('<!DOCTYPE html><html><body><ul class="todo-list"></ul></body></html>');
+const dom = new JSDOM(
+  '<!DOCTYPE html><html><body><ul class="todo-list"></ul></body></html>',
+);
 global.document = dom.window.document;
 global.window = dom.window;
 
@@ -41,7 +43,6 @@ describe('removeTask', () => {
   });
 
   test('removes a task from the list', () => {
-    const taskLi = document.querySelector('.task-li');
     removeTask(tasksArray[0]);
     expect(tasksArray).toHaveLength(0);
     expect(document.querySelectorAll('.task-li')).toHaveLength(0);
