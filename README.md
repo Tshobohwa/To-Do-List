@@ -14,27 +14,24 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [To Do List] <a name="about-project"></a>
+# 📖 To Do List<a name="about-project"></a>
 
-**[To Do List]** is web app that allow user to insert and remove tasks to do.
+To Do List is web app that allow user to insert and remove tasks to do.
 
 ## 🛠 Built With <a name="built-with">
 
--HTML
--CSS
--JavaScript
+- HTML
+- CSS
+- JavaScript
 </a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -43,11 +40,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add_Task]**
-- **[Remove_Task]**
-- **[Update_Task]**
+- Add Task
+- Remove Task 
+- Update Task
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p   align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
@@ -87,11 +84,9 @@ Clone this repository to your desired folder:
 
 Install this project with:
 
-Example command:
-
 ```sh
   cd my-project
-  gem install
+  npm install
 ```
 
 ### Usage
@@ -120,11 +115,8 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 
-- [ Remove Task ] **[Remove Task]**
-- [ drug and drop ] **[Drug and drop]**
-- [ Remove Task ] **[Remove task]**
+- Drug and drop: This will allow the user to changer the order of the tasks in the list.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +134,7 @@ Feel free to check the [issues page](https://github.com/Tshobohwa/To-Do-List/iss
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project, give us a start and kindly subsribe to our platforms to have access to more upcoming projects.
+If you like this project, give us a start and kindly subscribe to our platforms to have access to more upcoming projects.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,7 +142,7 @@ If you like this project, give us a start and kindly subsribe to our platforms t
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse.
+I would like to thank Microverse, for the opportunity they give me to learn and become a professional web developer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,7 +151,5 @@ I would like to thank Microverse.
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
